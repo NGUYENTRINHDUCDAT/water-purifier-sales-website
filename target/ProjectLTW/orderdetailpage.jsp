@@ -1,52 +1,100 @@
-<%@ page import="model.User" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 20/01/2024
+  Time: 10:50 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% User user = (User) session.getAttribute("user");
-    String checkLogin = user != null ? "/ProjectLTW_war/account-page" : "login.jsp";
-
-%>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
-    <link rel="stylesheet" href="./css/header.css">
+    <meta charset="UTF-8">
+    <title>Thông tin và địa chỉ</title>
+    <link rel="stylesheet" href="./css/accountdetails.css">
     <script src="https://kit.fontawesome.com/3e135170bd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="main">
-    <div id="header">
+    <%@include file="header.jsp" %>
+    <div id="content">
         <div class="container">
-            <div id="header-top">
-                <a href="/ProjectLTW_war/trangchu" class="logo">
-                    <img src="./img/logo-removebg-preview.png" alt="">
-                </a>
-                <a class="tinh js-tim-tinh">
-                    Xem giá, tồn kho tại:
-                    <span>Hồ Chí Minh</span></a>
-                <div class="search-bar ">
-                    <input type="text" placeholder="Bạn muốn tìm gì..." id="input-search">
-                    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            <div class="display">
+                <div class="toolbar">
+                    <h4><span>Anh </span>ĐOÀN QUỐC HUY</h4>
+                    <div class="mini-menu-toolbar">
+                        <div class="order-frame">
+                            <i class="fa-solid fa-rectangle-list" ></i>
+                            <a href="ordered.html" class="order">Đơn hàng đã mua</a>
+                        </div>
+                        <div class="infor-frame">
+                            <i class="fa-solid fa-address-card"></i>
+                            <a href="" class="thong-tin-va-dia-chi">Thông tin và địa chỉ</a>
+                        </div>
+                        <div class="log-off">
+                            <a href="" class="dang-xuat">Đăng xuất</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="<%=checkLogin%>"
-                class="tai-khoan-don-hang chung"><span>Tài khoản và đơn hàng</span></a>
-                <a href="/ProjectLTW_war/cart" class="gio-hang ">
-                    <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                    <span>Giỏ hàng</span>
-                </a>
-                <a href="sale.jsp" class="khuyen-mai chung">Khuyến mãi</a>
-                <a href="/ProjectLTW_war/contact" class="khuyen-mai chung">Liên hệ</a>
-
-            </div>
-            <div id="header-bottom">
-                <a href="" class="headbot-items">Deal Sốc</a>
-                <a href="/ProjectLTW_war/locnuocro" class="headbot-items">Lọc nước RO</a>
-                <a href="/ProjectLTW_war/locnuocnonglanh" class="headbot-items">Có nóng lạnh</a>
-                <a href="/ProjectLTW_war/locnuocamtudeban" class="headbot-items">Âm tủ, để bàn</a>
-                <a href="/ProjectLTW_war/locnuocnanoufmf" class="headbot-items">Lọc nước Nano, UF, MF</a>
-                <a href="/ProjectLTW_war/locnuockhongdien" class="headbot-items">Lọc nước không điện</a>
+                <div class="content-mini">
+                    <div class="title">
+                        <span class="title-ordered">Thông tin tài khoản</span>
+                    </div>
+                    <div class="infor-user">
+                        <div class="thong-tin-ca-nhan">
+                            <p>THÔNG TIN CÁ NHÂN</p>
+                            <span>Anh ĐOÀN QUỐC HUY -  0586485990</span>
+                        </div>
+                        <div class="select-infor">
+                            <div class="sex">
+                                <input type="radio" id="male">
+                                <span>Anh</span>
+                                <input type="radio" id="female">
+                                <span>Chị</span>
+                            </div>
+                            <div class="name-phone">
+                                <div class="name">
+                                    <span class="ho-va-ten-label">Họ & tên:</span>
+                                    <input type="text" id="ho-va-ten">
+                                </div>
+                                <div class="phone">
+                                    <span class="so-dien-thoai-label">Số điện thoại:</span>
+                                    <input type="text" id="so-dien-thoai">
+                                </div>
+                            </div>
+                            <div class="btn-cancel-save">
+                                <a href="" class="cancel-btn">Hủy</a>
+                                <a href="" class="save-btn">Lưu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infor-address">
+                        <div class="dia-chi-nhan-hang">
+                            <p>ĐỊA CHỈ NHẬN HÀNG</p>
+                        </div>
+                        <div class="nhap-dia-chi">
+                            <span class="tinh-label">Tỉnh:</span>
+                            <select name="" class="all" id="tinh">
+                                <option value="">Hồ Chí Minh</option>
+                            </select>
+                            <span class="dia-chi-label">Địa chỉ:</span>
+                            <input type="text" placeholder="Nhập địa chỉ" id="dia-chi" class="all">
+                        </div>
+                        <div class="mac-dinh">
+                            <input type="checkbox">
+                            <span>Đặt làm địa chỉ mặc định</span>
+                        </div>
+                        <div class="btn-frame">
+                            <a href="" class="cap-nhat">Cập nhật</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <%@include file="footer.jsp" %>
 </div>
-<%--Phần tỉnh thành--%>
+<!--Phần tỉnh thành-->
 <div class="modal-tinh-thanh js-modal-tinh-thanh">
     <div class="modal-container js-modal-container">
         <div class="header-modal">
