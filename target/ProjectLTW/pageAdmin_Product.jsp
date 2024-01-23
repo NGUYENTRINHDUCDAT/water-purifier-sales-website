@@ -1,12 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quản lý kho</title>
-    <link rel="stylesheet" href="../src/main/webapp/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/all.min.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/style.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/pageAdmin_product.css">
+    <title>Quản lý</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pageAdmin_product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .icon-wrapper {
@@ -26,17 +26,17 @@
 <body>
 <div class="sidebar">
     <div class="logo-details">
-        <a href="pageAdmin_Index.html"><img src="https://th.bing.com/th/id/OIP.ZpscpAS7kf2k2s_W_YdeuQHaHa?pid=ImgDet&rs=1" width="240px" height="150px"></a>
+        <a href="../../../html/pageAdmin_Index.html"><img src="https://th.bing.com/th/id/OIP.ZpscpAS7kf2k2s_W_YdeuQHaHa?pid=ImgDet&rs=1" width="240px" height="150px"></a>
     </div>
     <ul class="nav-links">
         <li>
-            <a href="pageAdmin_Index.html" class="active">
+            <a href="../../../html/pageAdmin_Index.html" class="active">
                 <i class="fa-solid fa-border-all"></i>
                 <span class="links_name">Trang chủ</span>
             </a>
         </li>
         <li>
-            <a href="pageAdmin_Storage.html" class="active">
+            <a href="pageAdmin_Storage.jsp" class="active">
                 <i class="fa-solid fa-box-open"></i>
                 <span class="links_name">Quản lý kho</span>
             </a>
@@ -48,20 +48,20 @@
             </a>
         </li>
         <li>
-            <a href="pageAdmin_Checkout.html">
+            <a href="../../../html/pageAdmin_Checkout.html">
                 <i class="fa-solid fa-note-sticky"></i>
                 <span class="links_name">Quản Lý Đơn Hàng</span>
             </a>
         </li>
         <li>
-            <a href="pageAdmin_User.html">
+            <a href="pageAdmin_User.jsp">
                 <i class="fa-solid fa-user"></i>
                 <span class="links_name">Quản Lý Tài Khoản</span>
             </a>
         </li>
 
         <li class="log_out">
-            <a href="pageAdmin_login.html">
+            <a href="../../../html/pageAdmin_login.html">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="links_name">Đăng xuất</span>
             </a>
@@ -77,20 +77,13 @@
             <div class="title">Danh Sách Sản Phẩm</div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="row element-button">
-                        <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="pageAdmin_Product.html" title="Thêm">
-                                <i class="fas fa-plus"></i>
-                                Nhập hàng mới</a>
-                        </div>
 
-                    </div>
                     <table id="table-id" class="table table-hover table-bordered">
                         <thead>
                         <tr>
                             <th scope="col">Mã</th>
                             <th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Khối lượng</th>
+                           <th scope="col">Khối lượng</th>
                             <th scope="col">Ảnh</th>
                             <th scope="col">Số lượng</th>
                             <th scope="col">Tình trạng</th>
@@ -134,7 +127,7 @@
                         <tr>
                             <th scope="row">102</th>
                             <td>Máy lọc nước không vỏ RO Karofi</td>
-                            <td>10kg</td>
+                           <td>10kg</td>
                             <td><img src="https://karofichinhhang.vn/Images/ImagesList/may-loc-nuoc-karofi-ksi80-2.png" style="max-width: 100px; max-height: 100px;"></td>
                             <td>40</td>
                             <td><span class="badge bg-success">Còn hàng</span></td>
@@ -163,7 +156,7 @@
                         <tr>
                             <th scope="row">103</th>
                             <td>Máy lọc nước RO Kangaroo</td>
-                            <td>13kg</td>
+                             <td>13kg</td>
                             <td><img src="https://kangaroo.vn/wp-content/uploads/may-loc-nuoc-ro-kg110avtu-1.jpg" style="max-width: 100px; max-height: 100px;"></td>
                             <td>42</td>
                             <td><span class="badge bg-success">Còn hàng</span></td>
@@ -195,11 +188,13 @@
         </div>
     </div>
 </section>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/jquery.dataTables.js"></script>
 
-<script type="text/javascript" charset="utf8" src="../js/bootstrap.bundle.min.js"></script>
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../../js/jquery.dataTables.js"></script>
+
+<script type="text/javascript" charset="utf8" src="../../../js/bootstrap.bundle.min.js"></script>
 <script>$("#table-id").DataTable();
 </script>
+
 </body>
 </html>

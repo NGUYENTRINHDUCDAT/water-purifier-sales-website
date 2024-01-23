@@ -1,11 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Quản lý</title>
-    <link rel="stylesheet" href="../src/main/webapp/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/all.min.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/style.css">
-    <link rel="stylesheet" href="../src/main/webapp/css/pageAdmin_product.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pageAdmin_product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .icon-wrapper {
@@ -25,17 +26,17 @@
 <body>
 <div class="sidebar">
     <div class="logo-details">
-        <a href="pageAdmin_Index.html"><img src="https://th.bing.com/th/id/OIP.ZpscpAS7kf2k2s_W_YdeuQHaHa?pid=ImgDet&rs=1" width="240px" height="150px"></a>
+        <a href="../../../html/pageAdmin_Index.html"><img src="https://th.bing.com/th/id/OIP.ZpscpAS7kf2k2s_W_YdeuQHaHa?pid=ImgDet&rs=1" width="240px" height="150px"></a>
     </div>
     <ul class="nav-links">
         <li>
-            <a href="pageAdmin_Index.html" class="active">
+            <a href="../../../html/pageAdmin_Index.html" class="active">
                 <i class="fa-solid fa-border-all"></i>
                 <span class="links_name">Trang chủ</span>
             </a>
         </li>
         <li>
-            <a href="pageAdmin_Storage.html" class="active">
+            <a href="pageAdmin_Storage.jsp" class="active">
                 <i class="fa-solid fa-box-open"></i>
                 <span class="links_name">Quản lý kho</span>
             </a>
@@ -47,20 +48,20 @@
             </a>
         </li>
         <li>
-            <a href="pageAdmin_Checkout.html">
+            <a href="../../../html/pageAdmin_Checkout.html">
                 <i class="fa-solid fa-note-sticky"></i>
                 <span class="links_name">Quản Lý Đơn Hàng</span>
             </a>
         </li>
         <li>
-            <a href="pageAdmin_User.html">
+            <a href="pageAdmin_User.jsp">
                 <i class="fa-solid fa-user"></i>
                 <span class="links_name">Quản Lý Tài Khoản</span>
             </a>
         </li>
 
         <li class="log_out">
-            <a href="pageAdmin_login.html">
+            <a href="../../../html/pageAdmin_login.html">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="links_name">Đăng xuất</span>
             </a>
@@ -188,10 +189,10 @@
     </div>
 </section>
 
-<script src="../js/jquery.min.js"></script>
-<script src="../js/jquery.dataTables.js"></script>
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../../js/jquery.dataTables.js"></script>
 
-<script type="text/javascript" charset="utf8" src="../js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" charset="utf8" src="../../../js/bootstrap.bundle.min.js"></script>
 <script>$("#table-id").DataTable();
 </script>
 
