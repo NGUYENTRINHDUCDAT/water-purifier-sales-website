@@ -54,11 +54,17 @@ public class VoucherDAO {
     }
 
 
-    public static Voucher getVoucherById(int id) {
-        Optional<Voucher> voucher = JDBIConnector.me().withHandle(handle ->
-                handle.createQuery("select * from vouchers where id = :id")
-                        .bind("id", id).mapToBean(Voucher.class).stream().findFirst());
-        return voucher.isEmpty() ? null : voucher.get();
+    public static Voucher getVoucherById(Integer id) {
+        if (id == null) {
+            return null;
+        }
+        return JDBIConnector.me().withHandle(handle ->
+                handle.createQuery("SELECT * FROM vouchers WHERE id = :id")
+                        .bind("id", id)
+                        .mapToBean(Voucher.class)
+                        .findOne()
+                        .orElse(null)
+        );
     }
 
 

@@ -153,12 +153,13 @@
                         ₫</p>
                 </div>
                 <%}%>
+                <% if (voucher != null) { %>
                 <div class="tax">
-                    <p class="tax-title"><%=voucher.getVoucher_name()%>
-                    </p>
-                    <p class="tax-price"><%=numberFormat.format(total - order.getTotal_money())%>₫
-                    </p>
+                    <p class="tax-title"><%=voucher.getVoucher_name()%></p>
+                    <p class="tax-price"><%=numberFormat.format(total - order.getTotal_money())%>₫</p>
                 </div>
+                <% } %>
+
                 <div class="total">
                     <p class="total-title">Tồng tiền</p>
                     <p class="total-price"><%=numberFormat.format(order.getTotal_money())%>₫</p>
@@ -316,6 +317,7 @@
                                     ', Điện thoại: ' + data.phoneNumber;
                                 newAddressElement.onclick = function () {
                                     selectedAddressElement.textContent = data.address;
+                                    console.log(data.receiver)
                                     selectedNameElement.textContent = data.receiver;
                                     selectedPhoneElement.textContent = data.phoneNumber;
                                     modal.style.display = "none";

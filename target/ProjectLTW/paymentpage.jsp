@@ -6,13 +6,7 @@
 <%@ page import="dao.OrderDetailDAO" %>
 <%@ page import="dao.VoucherDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="dao.ProductDAO" %><%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 21/01/2024
-  Time: 8:02 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="dao.ProductDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Order order = (Order) session.getAttribute("order");
@@ -159,12 +153,13 @@
                         ₫</p>
                 </div>
                 <%}%>
+                <% if (voucher != null) { %>
                 <div class="tax">
-                    <p class="tax-title"><%=voucher.getVoucher_name()%>
-                    </p>
-                    <p class="tax-price"><%=numberFormat.format(total - order.getTotal_money())%>₫
-                    </p>
+                    <p class="tax-title"><%=voucher.getVoucher_name()%></p>
+                    <p class="tax-price"><%=numberFormat.format(total - order.getTotal_money())%>₫</p>
                 </div>
+                <% } %>
+
                 <div class="total">
                     <p class="total-title">Tồng tiền</p>
                     <p class="total-price"><%=numberFormat.format(order.getTotal_money())%>₫</p>
@@ -322,6 +317,7 @@
                                     ', Điện thoại: ' + data.phoneNumber;
                                 newAddressElement.onclick = function () {
                                     selectedAddressElement.textContent = data.address;
+                                    console.log(data.receiver)
                                     selectedNameElement.textContent = data.receiver;
                                     selectedPhoneElement.textContent = data.phoneNumber;
                                     modal.style.display = "none";

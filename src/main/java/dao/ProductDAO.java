@@ -146,8 +146,8 @@ public class ProductDAO extends AbsDao<Product> {
         product.setType_machine_id(type);
         product.setBrand_id(brand);
         product.setStatus(1);
-        product.setCreated_at((java.sql.Date) new Date());
-        product.setUpdated_at((java.sql.Date) new Date());
+        product.setCreated_at(new java.sql.Date(System.currentTimeMillis()));
+        product.setUpdated_at(new java.sql.Date(System.currentTimeMillis()));
         super.insert(product);
         return rowsUpdated > 0;
 

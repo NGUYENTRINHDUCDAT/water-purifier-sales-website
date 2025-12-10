@@ -11,7 +11,7 @@ public class Order implements IModel {
     private String status;
     private LocalDateTime received_date;
     private int total_money;
-    private int voucher_id;
+    private Integer voucher_id;
     private String beforeData;
 
     private String name;
@@ -96,11 +96,11 @@ public class Order implements IModel {
         this.total_money = total_money;
     }
 
-    public int getVoucher_id() {
+    public Integer getVoucher_id() {
         return voucher_id;
     }
 
-    public void setVoucher_id(int voucher_id) {
+    public void setVoucher_id(Integer voucher_id) {
         this.voucher_id = voucher_id;
     }
 
