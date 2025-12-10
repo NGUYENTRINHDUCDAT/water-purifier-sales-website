@@ -36,12 +36,12 @@ public class OrderDetailDAO extends AbsDao<OrderDetail> {
     }
 
     public static List<OrderDetail> getOrderDetailByIdOrder(int order_id) {
-        List<OrderDetail> orders = JDBIConnector.me().withHandle(handle ->
+        return JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT * FROM order_details WHERE order_id = :order_id ")
                         .bind("order_id", order_id)
-                        .mapToBean(OrderDetail.class).stream().collect(Collectors.toList()));
-        return orders.isEmpty() ? null : orders;
-
+                        .mapToBean(OrderDetail.class)
+                        .list() // JDBI có sẵn list(), không cần stream()
+        );
     }
 
     public static void deleteOrderDetails(int id) {

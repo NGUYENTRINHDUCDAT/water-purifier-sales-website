@@ -27,13 +27,13 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Object object = req.getParameter("voucher_id");
-        int voucher_id = 0;
-        if (object != null) {
-            if (object instanceof Integer) {
-                voucher_id = (Integer) object;
-            } else if (object instanceof String) {
-                voucher_id = Integer.valueOf((String) object);
+        String voucherParam = req.getParameter("voucher_id");
+        Integer voucher_id = null;
+        if (voucherParam != null && !voucherParam.isEmpty() && !voucherParam.equalsIgnoreCase("null")) {
+            try {
+                voucher_id = Integer.parseInt(voucherParam);
+            } catch (NumberFormatException e) {
+                voucher_id = null; // hoặc log lỗi nếu cần
             }
         }
         Cart cart = (Cart) session.getAttribute("cart");
@@ -64,7 +64,7 @@ public class OrderController extends HttpServlet {
             }
 
             if (!outOfStock) {
-                boolean checkCreatedOrder = OrderService.getInstance().insertOrder(user.getId(), user.getAddress(), user.getPhoneNumber(), "Chưa chọn phương thức thanh toán", total_decrease, voucher_id, user.getFullName());
+                    boolean checkCreatedOrder = OrderService.getInstance().insertOrder(user.getId(), user.getAddress(), user.getPhoneNumber(), "Chưa chọn phương thức thanh toán", total_decrease, voucher_id, user.getFullName());
 
                 if (checkCreatedOrder) {
                     Order order = OrderService.getInstance().getOrder(user.getId(), "Chưa chọn phương thức thanh toán", total_decrease);

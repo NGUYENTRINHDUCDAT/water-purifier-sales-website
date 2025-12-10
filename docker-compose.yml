@@ -1,0 +1,26 @@
+version: '3.8' # Cực kỳ quan trọng: Thêm version vào đầu file
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    environment:
+      # Mật khẩu cho tài khoản 'root' - KHÔNG nên dùng chung cho MYSQL_ROOT_PASSWORD và MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: ZRvA790nB1Oxibot
+      
+      # Tên cơ sở dữ liệu sẽ được tạo tự động
+      MYSQL_DATABASE: healthywater
+
+      # Tên người dùng (user) thông thường để kết nối từ bên ngoài
+      # LƯU Ý: Rất nguy hiểm khi dùng 'root' cho user thông thường với mật khẩu yếu 'root'.
+      MYSQL_USER: user_healthywater # Đã đổi thành một tên user khác an toàn hơn
+
+      # Mật khẩu cho người dùng thông thường ở trên
+      MYSQL_PASSWORD: an_toan_mat_khau # Đặt một mật khẩu khác mạnh hơn 'root'
+    ports:
+      # Mở cổng 3306 của container ra cổng 3306 trên máy host
+      - "4321:3306"
+    volumes:
+      # Lưu trữ dữ liệu ra ngoài container
+      # Lưu ý: Sửa 'E:/HealthyWaterDb' thành './mysql_data' nếu bạn muốn lưu trong thư mục dự án
+      - E:/HealthyWaterDb:/var/lib/mysql

@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class OrderDAO extends AbsDao<Order> {
 
-    public boolean insertOrder(int user_id, String address, String phone, String status, int total_money, int voucher_id, String name) {
+    public boolean insertOrder(int user_id, String address, String phone, String status, int total_money, Integer voucher_id, String name) {
         int rowAffected = JDBIConnector.me().withHandle(handle ->
                 handle.createUpdate("INSERT INTO orders( user_id, address, phone, order_date,status,total_money,voucher_id,name) " +
                                 "VALUES ( :user_id, :address, :phone, :order_date, :status, :total_money,:voucher_id,:name)")

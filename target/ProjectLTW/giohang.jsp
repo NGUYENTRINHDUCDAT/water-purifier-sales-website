@@ -28,7 +28,7 @@
 
     int total_decrease = (int) (total - (total * percent_decrease));
     Object object = request.getParameter("voucher_id");
-    int voucher_id = 0;
+    Integer voucher_id = null;
     if (object != null) {
         if (object instanceof Integer) {
             voucher_id = (Integer) object;
