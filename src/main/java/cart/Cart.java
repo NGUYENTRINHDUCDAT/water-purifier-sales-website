@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
+
     Map<Integer, CartProduct> data = new HashMap<>();
     public boolean add(int id){
         return add(id, 1);

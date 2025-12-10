@@ -2,6 +2,7 @@ package cart;
 
 import model.Product;
 
+//tạo dối tượng cart product
 public class CartProduct {
     int quantity;
     Product product;
@@ -26,6 +27,7 @@ public class CartProduct {
         this.quantity = quantity;
         this.product = product;
     }
+
 
     public CartProduct() {
     }

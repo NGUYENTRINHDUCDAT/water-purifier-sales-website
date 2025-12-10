@@ -39,7 +39,7 @@ public class ajaxServlet extends HttpServlet {
         String vnp_Command = "pay";
         String orderType = "other";
 
-        // Xử lý giá trị amount
+        // Xử lý giá trị amount cho phương thức
         String amountParam = req.getParameter("amount");
         System.out.println(amountParam);
         long amount = 0;
