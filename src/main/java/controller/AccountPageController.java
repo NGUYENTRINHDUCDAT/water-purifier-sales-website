@@ -14,6 +14,8 @@ public class AccountPageController extends HttpServlet {
         doPost(req, resp);
     }
 
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("accountpage.jsp").forward(req, resp);
