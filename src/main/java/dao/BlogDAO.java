@@ -18,6 +18,8 @@ public class BlogDAO {
         return posts;
     }
 
+
+
     public static Post getPostById(int postId) {
         String query = "SELECT * FROM posts WHERE id = :postId";
         return JDBIConnector.me().withHandle(handle -> handle.createQuery(query)

@@ -18,6 +18,8 @@ public class AddressDAO {
         return addresses;
     }
 
+
+
     public static void main(String[] args) {
         AddressDAO dao = new AddressDAO();
         System.out.println(dao.getAddressListByUserId(14));

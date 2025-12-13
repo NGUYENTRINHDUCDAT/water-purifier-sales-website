@@ -17,6 +17,8 @@ public class BrandDAO {
         return brands;
     }
 
+
+
     public static Brand getBrandById(int id) {
         Optional<Brand> brand = JDBIConnector.me().withHandle(handle ->
                 handle.createQuery("SELECT * FROM brands WHERE id = :id")
