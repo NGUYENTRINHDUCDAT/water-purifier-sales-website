@@ -10,6 +10,8 @@ import java.util.Properties;
 public class MailService {
     static Properties props = new Properties();
 
+
+
     static {
         props.put("mail.smtp.auth", MailProperties.auth);
         props.put("mail.smtp.starttls.enable", MailProperties.ssl);

@@ -14,6 +14,8 @@ public class MailProperties {
         }
     }
 
+
+
     public static String host = prop.getProperty("mail.smtp.host");
     public static String port = prop.getProperty("mail.smtp.port");
     public static boolean auth = "true".equals(prop.getProperty("mail.smtp.auth"));
