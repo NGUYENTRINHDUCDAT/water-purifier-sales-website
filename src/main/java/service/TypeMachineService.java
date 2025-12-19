@@ -7,6 +7,7 @@ import model.TypeMachine;
 import java.util.List;
 
 public class TypeMachineService {
+
     private static TypeMachineService  instance;
     public static TypeMachineService getInstance() {
         if (instance == null)

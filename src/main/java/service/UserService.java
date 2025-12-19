@@ -16,6 +16,7 @@ public class UserService {
         return instance;
     }
 
+
     public static boolean countPassword(String password) {
         if (password.length() >= 8) {
             return true;

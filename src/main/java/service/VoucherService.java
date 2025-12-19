@@ -15,6 +15,7 @@ public class VoucherService {
         return instance;
     }
 
+
     public ArrayList<Voucher> getVoucher() {
         return VoucherDAO.getVoucher();
     }
