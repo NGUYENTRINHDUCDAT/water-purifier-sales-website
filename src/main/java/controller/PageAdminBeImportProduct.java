@@ -13,11 +13,12 @@ import java.io.IOException;
 import java.util.List;
 @WebServlet(name = "PageAdminBeImportProduct", value = "/pageAdminBeImportProduct")
 public class PageAdminBeImportProduct extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
-
+//sửa adminpage
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productBeImport  = ImportProductService.getProductsWithHighSalesRatio();
